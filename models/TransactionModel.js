@@ -15,7 +15,6 @@ const transactionSchema = new mongoose.Schema(
     gasPrice: String,
     gasUsed: String,
     isError: String,
-    address: String,
   },
   { timestamps: true, versionKey: false }
 );
