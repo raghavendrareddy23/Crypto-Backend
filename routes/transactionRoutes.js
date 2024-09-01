@@ -3,6 +3,6 @@ const { fetchAndStoreTransactions } = require('../controllers/transactionControl
 
 const transactionRoutes = express.Router();
 
-transactionRoutes.get('/', fetchAndStoreTransactions);
+transactionRoutes.get('/:address', fetchAndStoreTransactions);
 
 module.exports = transactionRoutes;
