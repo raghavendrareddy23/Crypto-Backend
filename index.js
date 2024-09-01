@@ -2,10 +2,13 @@ require('dotenv').config();
 const express = require('express');
 const connectDB = require('./db');
 const router = require('./routes/Router')
+const { fetchAndStorePrice } = require('./controllers/priceController');
+require('./cron');
 
 const app = express();
 app.use(express.json());
 
+setInterval(fetchAndStorePrice, 10 * 60 * 1000);
 app.use(router);
 connectDB();
 
